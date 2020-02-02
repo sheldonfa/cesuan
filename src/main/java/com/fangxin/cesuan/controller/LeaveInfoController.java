@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class LeaveInfoController extends BaseController {
 
     @PostMapping("/test")
-    public ApiResult<String> test(String aa) throws Exception {
+    public ApiResult<String> test() throws Exception {
         return ApiResult.ok("success");
     }
 
