@@ -18,12 +18,10 @@ import java.sql.Timestamp;
  */
 @Entity
 @Table(name = "baby_name")
-public class BabyName implements Serializable{
+public class BabyName implements Serializable {
     @Id
-    private Long id; //自增主键
-    @Column(name = "record_id")
     private String recordId; //唯一标识
-    @Column(name="customer_birth_status")
+    @Column(name = "customer_birth_status")
     private Short customerBirthStatus; //出生状态：1-已出生 2-未出生
     @Column(name = "customer_last_name")
     private String customerLastName; //客户姓氏
@@ -42,13 +40,6 @@ public class BabyName implements Serializable{
     @Column(name = "is_delete")
     private Short idDelete; //是否删除 1 删除 2 正常
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getRecordId() {
         return recordId;

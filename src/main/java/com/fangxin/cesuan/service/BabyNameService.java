@@ -27,15 +27,17 @@ public class BabyNameService {
     private IdWorker idWorker;
 
     /*添加*/
-    public void add(BabyName babyName){
-        babyName.setId(1L);
-        //设置RecordId
-        babyName.setRecordId(String.valueOf(idWorker.nextId()));
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
-        String date = df.format(new Date());// new Date()为获取当前系统时间，也可使用当前时间戳
-        babyName.setCreateTime(Timestamp.valueOf(date));
-        babyName.setUpdateAt(Timestamp.valueOf(date));
-        babyName.setIdDelete((short) 2);
-        babyNameDao.save(babyName);
+    public void add(BabyName babyName) {
+        //判断姓氏不为空则调用
+        if ("".equals(babyName.getCustomerLastName()) && babyName.getCustomerLastName() != null) {
+            //设置RecordId
+            babyName.setRecordId(String.valueOf(idWorker.nextId()));
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+            String date = df.format(new Date());// new Date()为获取当前系统时间，也可使用当前时间戳
+            babyName.setCreateTime(Timestamp.valueOf(date));
+            babyName.setUpdateAt(Timestamp.valueOf(date));
+            babyName.setIdDelete((short) 2);
+            babyNameDao.save(babyName);
+        }
     }
 }

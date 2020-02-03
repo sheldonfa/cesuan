@@ -28,16 +28,18 @@ public class ChineseLearningRateService {
     private IdWorker idWorker;
 
     /*添加*/
-    public void add(ChineseLearningRate chineseLearningRate){
-//        chineseLearningRate.setId(1L);
-        //设置RecordId
-        chineseLearningRate.setRecordId(String.valueOf(idWorker.nextId()));
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
-        String date = df.format(new Date());// new Date()为获取当前系统时间，也可使用当前时间戳
-        chineseLearningRate.setCreateTime(Timestamp.valueOf(date));
-        chineseLearningRate.setUpdateAt(Timestamp.valueOf(date));
-        chineseLearningRate.setIdDelete((short) 2);
-        chineseLearningRateDao.save(chineseLearningRate);
+    public void add(ChineseLearningRate chineseLearningRate) {
+        //判断姓名不为空则调用
+        if ("".equals(chineseLearningRate.getCustomerName()) && chineseLearningRate.getCustomerName() != null){
+            //设置RecordId
+            chineseLearningRate.setRecordId(String.valueOf(idWorker.nextId()));
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+            String date = df.format(new Date());// new Date()为获取当前系统时间，也可使用当前时间戳
+            chineseLearningRate.setCreateTime(Timestamp.valueOf(date));
+            chineseLearningRate.setUpdateAt(Timestamp.valueOf(date));
+            chineseLearningRate.setIdDelete((short) 2);
+            chineseLearningRateDao.save(chineseLearningRate);
+        }
     }
 
 
