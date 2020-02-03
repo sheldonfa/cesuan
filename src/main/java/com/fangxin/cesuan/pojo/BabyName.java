@@ -1,6 +1,5 @@
 package com.fangxin.cesuan.pojo;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -11,21 +10,23 @@ import java.sql.Timestamp;
 
 /**
  * <pre>
- * 国学打分表实体类
+ * 宝宝起名表实体类
  * </pre>
  *
  * @author chengyz
  * @since 2020-02-02
  */
 @Entity
-@Table(name = "chinese_learning_rate")
-public class ChineseLearningRate implements Serializable {
+@Table(name = "baby_name")
+public class BabyName implements Serializable{
     @Id
     private Long id; //自增主键
     @Column(name = "record_id")
     private String recordId; //唯一标识
-    @Column(name = "customer_name")
-    private String customerName; //客户姓名
+    @Column(name="customer_birth_status")
+    private Short customerBirthStatus; //出生状态：1-已出生 2-未出生
+    @Column(name = "customer_last_name")
+    private String customerLastName; //客户姓氏
     @Column(name = "customer_sex")
     private Short customerSex; //客户性别：1-男 2-女 0-未知
     @Column(name = "calendar_type")
@@ -57,12 +58,20 @@ public class ChineseLearningRate implements Serializable {
         this.recordId = recordId;
     }
 
-    public String getCustomerName() {
-        return customerName;
+    public Short getCustomerBirthStatus() {
+        return customerBirthStatus;
     }
 
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
+    public void setCustomerBirthStatus(Short customerBirthStatus) {
+        this.customerBirthStatus = customerBirthStatus;
+    }
+
+    public String getCustomerLastName() {
+        return customerLastName;
+    }
+
+    public void setCustomerLastName(String customerLastName) {
+        this.customerLastName = customerLastName;
     }
 
     public Short getCustomerSex() {

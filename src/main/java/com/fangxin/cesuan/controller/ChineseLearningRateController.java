@@ -11,15 +11,15 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * <pre>
- * 订单记录表 前端控制器
+ * 国学打分表 前端控制器
  * </pre>
  *
- * @author geekidea
- * @since 2020-01-26
+ * @author chengyz
+ * @since 2020-02-02
  */
 @Slf4j
 @RestController
-@RequestMapping("/ChineseLearningRate")
+@RequestMapping("/chineseLearningRate")
 public class ChineseLearningRateController extends BaseController {
     @Autowired
     private ChineseLearningRateService chineseLearningRateService;
