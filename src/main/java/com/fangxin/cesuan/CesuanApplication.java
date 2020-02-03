@@ -8,6 +8,7 @@ public class CesuanApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CesuanApplication.class, args);
+
 	}
 
 }
