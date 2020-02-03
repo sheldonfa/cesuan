@@ -21,8 +21,6 @@ import java.sql.Timestamp;
 @Table(name = "chinese_learning_rate")
 public class ChineseLearningRate implements Serializable {
     @Id
-    private Long id; //自增主键
-    @Column(name = "record_id")
     private String recordId; //唯一标识
     @Column(name = "customer_name")
     private String customerName; //客户姓名
@@ -40,14 +38,6 @@ public class ChineseLearningRate implements Serializable {
     private Timestamp updateAt; //更新时间
     @Column(name = "is_delete")
     private Short idDelete; //是否删除 1 删除 2 正常
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getRecordId() {
         return recordId;

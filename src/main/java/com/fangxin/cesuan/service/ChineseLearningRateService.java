@@ -29,7 +29,7 @@ public class ChineseLearningRateService {
 
     /*添加*/
     public void add(ChineseLearningRate chineseLearningRate){
-        chineseLearningRate.setId(1L);
+//        chineseLearningRate.setId(1L);
         //设置RecordId
         chineseLearningRate.setRecordId(String.valueOf(idWorker.nextId()));
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
